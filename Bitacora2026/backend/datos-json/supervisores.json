@@ -1,0 +1,22 @@
+[
+  {
+    "nombreCompleto": "Carlos González Segura",
+    "empresaId": {
+      "$oid": "REEMPLAZAR_ID_EMPRESA_SISTECSA"
+    },
+    "departamento": "TI",
+    "correo": "carlos@sistecsa.com",
+    "telefono": "89380844",
+    "activo": true
+  },
+  {
+    "nombreCompleto": "Alexander Elizondo Duarte",
+    "empresaId": {
+      "$oid": "REEMPLAZAR_ID_MUNICIPALIDAD"
+    },
+    "departamento": "Administración",
+    "correo": "alexander.elizondo@municanas.go.cr",
+    "telefono": "26904010",
+    "activo": true
+  }
+]

@@ -1,0 +1,245 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Administración de pasantías</title>
+
+  <link
+    rel="stylesheet"
+    href="css/estilos.css"
+  >
+</head>
+
+<body>
+
+  <header class="encabezado">
+
+    <div>
+      <h1>Administración de pasantías</h1>
+
+      <p id="nombreAdministrador"></p>
+    </div>
+
+    <button
+      type="button"
+      class="boton-secundario"
+      onclick="cerrarSesion()"
+    >
+      Cerrar sesión
+    </button>
+
+  </header>
+
+  <main class="contenedor">
+
+    <section class="panel">
+
+      <h2>Registrar empresa</h2>
+
+      <form
+        id="formEmpresa"
+        class="formulario-grid"
+      >
+
+        <input
+          id="nombreEmpresa"
+          placeholder="Nombre de la empresa"
+          required
+        >
+
+        <input
+          id="departamentoEmpresa"
+          placeholder="Departamento"
+        >
+
+        <input
+          id="direccionEmpresa"
+          placeholder="Dirección"
+        >
+
+        <input
+          id="correoEmpresa"
+          type="email"
+          placeholder="Correo"
+        >
+
+        <input
+          id="telefonoEmpresa"
+          placeholder="Teléfono"
+        >
+
+        <button type="submit">
+          Registrar empresa
+        </button>
+
+      </form>
+
+    </section>
+
+    <section class="panel">
+
+      <h2>Registrar supervisor</h2>
+
+      <form
+        id="formSupervisor"
+        class="formulario-grid"
+      >
+
+        <input
+          id="nombreSupervisor"
+          placeholder="Nombre completo"
+          required
+        >
+
+        <select
+          id="empresaSupervisor"
+          required
+        ></select>
+
+        <input
+          id="departamentoSupervisor"
+          placeholder="Departamento"
+        >
+
+        <input
+          id="correoSupervisor"
+          type="email"
+          placeholder="Correo"
+        >
+
+        <input
+          id="telefonoSupervisor"
+          placeholder="Teléfono"
+        >
+
+        <button type="submit">
+          Registrar supervisor
+        </button>
+
+      </form>
+
+    </section>
+
+    <section class="panel">
+
+      <h2>Registrar estudiante</h2>
+
+      <form
+        id="formEstudiante"
+        class="formulario-grid"
+      >
+
+        <input
+          id="cedulaEstudiante"
+          placeholder="Cédula"
+          required
+        >
+
+        <input
+          id="nombreEstudiante"
+          placeholder="Nombre completo"
+          required
+        >
+
+        <input
+          id="correoEstudiante"
+          type="email"
+          placeholder="Correo de acceso"
+          required
+        >
+
+        <input
+          id="passwordEstudiante"
+          type="password"
+          placeholder="Contraseña inicial"
+          required
+        >
+
+        <select
+          id="especialidadEstudiante"
+          required
+        ></select>
+
+        <select
+          id="empresaEstudiante"
+          required
+        ></select>
+
+        <select
+          id="supervisorEstudiante"
+          required
+        ></select>
+
+        <input
+          id="residenciaEstudiante"
+          placeholder="Lugar de residencia"
+        >
+
+        <input
+          id="fechaInicio"
+          type="date"
+          required
+        >
+
+        <input
+          id="fechaFin"
+          type="date"
+          required
+        >
+
+        <input
+          id="horarioEstudiante"
+          placeholder="Horario de pasantía"
+        >
+
+        <button type="submit">
+          Registrar estudiante
+        </button>
+
+      </form>
+
+    </section>
+
+    <section class="panel">
+
+      <h2>Revisión de bitácoras</h2>
+
+      <div class="tabla-responsive">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Estudiante</th>
+              <th>Empresa</th>
+              <th>Fecha</th>
+              <th>Actividad</th>
+              <th>Horas</th>
+              <th>Estado</th>
+              <th>Revisión</th>
+            </tr>
+          </thead>
+
+          <tbody id="tablaRevision"></tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <script src="js/api.js"></script>
+
+  <script src="js/administrador.js"></script>
+
+</body>
+</html>

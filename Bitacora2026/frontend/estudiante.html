@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Mi pasantía</title>
+
+  <link
+    rel="stylesheet"
+    href="css/estilos.css"
+  >
+</head>
+
+<body>
+
+  <header class="encabezado">
+
+    <div>
+      <h1>Bitácora de Pasantía 2026</h1>
+
+      <p id="nombreUsuario"></p>
+    </div>
+
+    <button
+      type="button"
+      class="boton-secundario"
+      onclick="cerrarSesion()"
+    >
+      Cerrar sesión
+    </button>
+
+  </header>
+
+  <nav class="menu">
+
+    <a href="estudiante.html">
+      Mi información
+    </a>
+
+    <a href="bitacora.html">
+      Mi bitácora
+    </a>
+
+  </nav>
+
+  <main class="contenedor">
+
+    <section class="panel">
+
+      <h2>Información de la pasantía</h2>
+
+      <div
+        id="datosEstudiante"
+        class="datos-estudiante"
+      ></div>
+
+    </section>
+
+  </main>
+
+  <script src="js/api.js"></script>
+
+  <script src="js/estudiante.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Mi bitácora de pasantía</title>
+
+  <link
+    rel="stylesheet"
+    href="css/estilos.css"
+  >
+</head>
+
+<body>
+
+  <!-- =========================================
+       ENCABEZADO DE LA PÁGINA
+  ========================================== -->
+
+  <header class="encabezado">
+
+    <div>
+      <h1>Mi bitácora</h1>
+
+      <p>
+        Registro semanal de actividades de pasantía
+      </p>
+    </div>
+
+    <button
+      type="button"
+      class="boton-secundario"
+      id="btnCerrarSesion"
+    >
+      Cerrar sesión
+    </button>
+
+  </header>
+
+  <!-- =========================================
+       MENÚ
+  ========================================== -->
+
+  <nav class="menu">
+
+    <a href="estudiante.html">
+      Mi información
+    </a>
+
+    <a
+      href="bitacora.html"
+      class="activo"
+    >
+      Mi bitácora
+    </a>
+
+  </nav>
+
+  <!-- =========================================
+       CONTENIDO PRINCIPAL
+  ========================================== -->
+
+  <main class="contenedor">
+
+    <!-- DATOS DEL ESTUDIANTE -->
+
+    <section class="panel">
+
+      <h2>Información del estudiante</h2>
+
+      <div class="datos-estudiante">
+
+        <p>
+          <strong>Nombre:</strong>
+          <span id="nombreEstudiante">
+            Cargando...
+          </span>
+        </p>
+
+        <p>
+          <strong>Especialidad:</strong>
+          <span id="especialidadEstudiante">
+            Cargando...
+          </span>
+        </p>
+
+        <p>
+          <strong>Empresa:</strong>
+          <span id="empresaEstudiante">
+            Cargando...
+          </span>
+        </p>
+
+        <p>
+          <strong>Supervisor:</strong>
+          <span id="supervisorEstudiante">
+            Cargando...
+          </span>
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- REGISTRAR ACTIVIDAD -->
+
+    <section class="panel">
+
+      <h2>Registrar actividad</h2>
+
+      <form
+        id="formBitacora"
+        class="formulario-grid"
+      >
+
+        <input
+          type="hidden"
+          id="registroId"
+        >
+
+        <div>
+          <label for="fecha">
+            Fecha
+          </label>
+
+          <input
+            type="date"
+            id="fecha"
+            name="fecha"
+            required
+          >
+        </div>
+
+        <div>
+          <label for="horaEntrada">
+            Hora de entrada
+          </label>
+
+          <input
+            type="time"
+            id="horaEntrada"
+            name="horaEntrada"
+            required
+          >
+        </div>
+
+        <div>
+          <label for="horaSalida">
+            Hora de salida
+          </label>
+
+          <input
+            type="time"
+            id="horaSalida"
+            name="horaSalida"
+            required
+          >
+        </div>
+
+        <div class="campo-completo">
+
+          <label for="tarea">
+            Actividad realizada
+          </label>
+
+          <textarea
+            id="tarea"
+            name="tarea"
+            rows="5"
+            placeholder="Describa detalladamente las actividades realizadas durante el día."
+            required
+          ></textarea>
+
+        </div>
+
+        <div class="campo-completo">
+
+          <button
+            type="submit"
+            id="btnGuardarActividad"
+          >
+            Guardar actividad
+          </button>
+
+          <button
+            type="button"
+            class="boton-secundario"
+            id="btnCancelarEdicion"
+          >
+            Cancelar edición
+          </button>
+
+        </div>
+
+        <p
+          id="mensajeBitacora"
+          class="mensaje-error campo-completo"
+          role="alert"
+          aria-live="polite"
+        ></p>
+
+      </form>
+
+    </section>
+
+    <!-- REGISTROS -->
+
+    <section class="panel">
+
+      <div class="titulo-panel">
+
+        <div>
+          <h2>Registros realizados</h2>
+
+          <p>
+            Total general de horas:
+            <strong id="totalHoras">
+              0.00
+            </strong>
+          </p>
+        </div>
+
+      </div>
+
+      <!-- CONTROLES DE IMPRESIÓN -->
+
+      <div class="acciones-impresion">
+
+        <div>
+          <label for="semanaImprimir">
+            Semana que desea imprimir
+          </label>
+
+          <input
+            type="week"
+            id="semanaImprimir"
+          >
+        </div>
+
+        <button
+          type="button"
+          id="btnImprimirSemana"
+        >
+          Imprimir semana
+        </button>
+
+      </div>
+
+      <!-- TABLA NORMAL -->
+
+      <div class="tabla-responsive">
+
+        <table class="tabla-registros">
+
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>Actividad</th>
+              <th>Entrada</th>
+              <th>Salida</th>
+              <th>Horas</th>
+              <th>Estado</th>
+              <th>Observaciones</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody id="tablaBitacoras"></tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- =========================================
+       REPORTE PARA IMPRESIÓN
+  ========================================== -->
+
+  <section
+    id="reporteImpresion"
+    class="reporte-impresion"
+  >
+
+    <!-- ENCABEZADO INSTITUCIONAL -->
+
+    <div class="encabezado-institucional">
+
+      <img
+        id="imagenEncabezado"
+        alt="Encabezado institucional del Ministerio de Educación Pública y del Colegio Técnico Profesional Cañas"
+      >
+
+    </div>
+
+    <!-- DATOS DEL REPORTE -->
+
+    <div class="datos-reporte">
+
+      <h1>
+        Bitácora de Pasantía 2026
+      </h1>
+
+      <p>
+        <strong>Estudiante:</strong>
+        <span id="impEstudiante"></span>
+      </p>
+
+      <p>
+        <strong>Especialidad:</strong>
+        <span id="impEspecialidad"></span>
+      </p>
+
+      <p>
+        <strong>Empresa:</strong>
+        <span id="impEmpresa"></span>
+      </p>
+
+      <p>
+        <strong>Departamento:</strong>
+        <span id="impDepartamento"></span>
+      </p>
+
+      <p>
+        <strong>Dirección:</strong>
+        <span id="impDireccion"></span>
+      </p>
+
+      <p>
+        <strong>Período:</strong>
+        <span id="impPeriodo"></span>
+      </p>
+
+      <p>
+        <strong>Semana:</strong>
+        <span id="impSemana"></span>
+      </p>
+
+    </div>
+
+    <!-- TABLA DE IMPRESIÓN -->
+
+    <table class="tabla-impresion">
+
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Tarea</th>
+          <th>Entrada</th>
+          <th>Salida</th>
+          <th>Total horas</th>
+          <th>Firma del supervisor</th>
+        </tr>
+      </thead>
+
+      <tbody id="cuerpoTablaImpresion"></tbody>
+
+      <tfoot>
+        <tr>
+
+          <td
+            colspan="4"
+            class="texto-total"
+          >
+            Total de horas
+          </td>
+
+          <td id="totalHorasImpresion">
+            0.00
+          </td>
+
+          <td></td>
+
+        </tr>
+      </tfoot>
+
+    </table>
+
+  </section>
+
+  <!-- =========================================
+       SCRIPTS
+  ========================================== -->
+
+  <script src="js/api.js"></script>
+
+  <!-- Archivo que contiene window.logoBase64 -->
+  <script src="js/logoBase64.js"></script>
+
+  <script src="js/bitacora.js"></script>
+
+</body>
+</html>

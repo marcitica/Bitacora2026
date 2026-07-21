@@ -1,0 +1,34 @@
+[
+  {
+    "nombreEmpresa": "SISTECSA",
+    "departamento": "TI",
+    "direccion": "Cañas, Guanacaste",
+    "correo": "carlos@sistecsa.com",
+    "telefono": "89380844",
+    "estado": "Activa"
+  },
+  {
+    "nombreEmpresa": "Municipalidad de Cañas",
+    "departamento": "Administración",
+    "direccion": "Cañas, Guanacaste",
+    "correo": "alexander.elizondo@municanas.go.cr",
+    "telefono": "26904010",
+    "estado": "Activa"
+  },
+  {
+    "nombreEmpresa": "Arrocera Liborio",
+    "departamento": "Gerencia General",
+    "direccion": "Cañas, Guanacaste",
+    "correo": "gerencia@arroceraliborio.com",
+    "telefono": "88195846",
+    "estado": "Activa"
+  },
+  {
+    "nombreEmpresa": "Terrapez",
+    "departamento": "Representación Legal",
+    "direccion": "Cañas, Guanacaste",
+    "correo": "amatamoros@llm.co.cr",
+    "telefono": "26684000",
+    "estado": "Activa"
+  }
+]

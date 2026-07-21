@@ -1,0 +1,10 @@
+[
+  {
+    "nombre": "Desarrollo Web",
+    "activo": true
+  },
+  {
+    "nombre": "Refrigeración y Aire Acondicionado",
+    "activo": true
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "name": "bitacora-pasantia",
+  "version": "1.0.0",
+  "description": "Sistema de bitácoras de pasantía del CTP Cañas",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "seed": "node backend/seed/crearDatosIniciales.js",
+    "seed:desarrollo-web": "node backend/seed/crearEstudiantesDesarrolloWeb.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
